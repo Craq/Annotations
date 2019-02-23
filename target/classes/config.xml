@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <context:annotation-config/>
+
+    <bean class="CPU">
+        <qualifier value="snapdragon"/>
+        <constructor-arg name="name" value="Snapdragon 420"></constructor-arg>
+        <constructor-arg name="cores" value="4"></constructor-arg>
+    </bean>
+    <bean class="CPU">
+        <qualifier value="bionic"/>
+        <constructor-arg name="name" value="A12 bionic"></constructor-arg>
+        <constructor-arg name="cores" value="6"></constructor-arg>
+    </bean>
+    <bean class="Battery">
+        <qualifier value="med"/>
+        <constructor-arg name="mAh" value="3200"></constructor-arg>
+    </bean>
+    <bean class="Battery">
+        <qualifier value="large"/>
+        <constructor-arg name="mAh" value="4200"></constructor-arg>
+    </bean>
+    <bean class="Screen">
+        <qualifier value="2k"/>
+        <constructor-arg name="name" value="2k display"></constructor-arg>
+        <constructor-arg name="resolution" value="2400x1440"></constructor-arg>
+    </bean>
+    <bean class="Screen">
+        <qualifier value="retina"/>
+        <constructor-arg name="name" value="retina display"></constructor-arg>
+        <constructor-arg name="resolution" value="1880x1080"></constructor-arg>
+    </bean>
+    <bean id="XS" class="iPhone"><constructor-arg name="name" value="iPhone XS"></constructor-arg></bean>
+    <bean id="s10" class="Galaxy"><constructor-arg name="name" value="Galaxy S10"></constructor-arg></bean>
+</beans>
